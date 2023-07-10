@@ -1,21 +1,26 @@
-const button = document.getElementById("botao");
-const inputMin = document.querySelector(".input-min");
-const inputMax = document.querySelector(".input-max");
+const button = document.getElementById('botao');
+const inputMin = document.querySelector('.input-min');
+const inputMax = document.querySelector('.input-max');
+const modal = document.getElementById('myModal');
+const modalMessage = document.getElementById('modal-message');
+const closeBtn = document.getElementsByClassName('close')[0];
 
-button.addEventListener("click", () => {
-  const min = parseInt(inputMin.value);  //converte os valores de entrada para números
+button.addEventListener('click', () => {
+  const min = parseInt(inputMin.value);
   const max = parseInt(inputMax.value);
 
-  const generateNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+  const numeroAleatorio = Math.floor(Math.random() * (max - min + 1)) + min;
 
-  alert(generateNumber);
+  showModal(numeroAleatorio);
 });
 
-//    console.log(inputMin.value, inputMax.value)
+function showModal(message) {
+  modal.style.display = 'block';
+  modalMessage.textContent = `O número ganhador foi o "${message}"`
+}
 
-// function sorteador(min, max){
+function closeModal() {
+  modal.style.display = 'none';
+}
 
-//    return Math.floor(Math.random() * (max - min + 1)) + min;
-// }
-
-// console.log(sorteador(10,20))
+closeBtn.addEventListener('click', closeModal);
