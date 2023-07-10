@@ -163,8 +163,6 @@ p {
   }
 
   p {
-    position: relative;
-    top: 55px;
-    left: 9px;
+    font-size: 17px;
   }
 }
