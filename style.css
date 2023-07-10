@@ -8,7 +8,8 @@
 }
 
 img {
-  width: 20rem;
+  max-width: 65%;
+  height: auto;
 }
 
 .container {
@@ -62,7 +63,7 @@ input::placeholder {
 }
 
 button {
-    width: 50%;
+    width: 40%;
     height: 40px;
     background-color: rgb(93, 33, 93);
     color: #fff;
@@ -81,3 +82,24 @@ button {
     opacity: 0.8;
   }
   
+
+  @media (max-width: 768px) {
+    img {
+      max-width: 80%;
+    }
+  
+    .inputs {
+      flex-direction: column;
+      margin-bottom: 1em;
+    }
+  
+    input {
+      width: 100%;
+      max-width: 15em;
+    }
+  
+    button {
+      width: 100%;
+      max-width: 15em;
+    }
+  }
