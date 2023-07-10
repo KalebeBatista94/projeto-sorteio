@@ -89,7 +89,7 @@ button:active {
 
 .modal {
   display: none;
-  position: absolute;
+  position: fixed;
   z-index: 1;
   left: 0;
   top: 0;
@@ -110,8 +110,28 @@ button:active {
   max-width: 400px;
 }
 
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #000;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
 p {
-  line-height: normal!important;
+  line-height: normal !important;
   display: flex;
   justify-content: center;
   position: relative;
@@ -121,14 +141,15 @@ p {
 }
 
 .close {
-  position: relative;
-  top: -20px;
-  left: 15px;
-  color: #000000;
+  /* Estilos para o botão de fechar */
+  color: #aaa;
   float: right;
-  font-size: 30px;
+  font-size: 28px;
   font-weight: bold;
   cursor: pointer;
+  margin-top: -10px;
+  margin-right: -10px;
+  transition: .5s;
 }
 
 .close:hover,
@@ -136,6 +157,17 @@ p {
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+.modal-loading {
+  /* Estilos para o ícone de carregamento */
+  margin: 20px auto;
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #000;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
 }
 
 @media (max-width: 768px) {
@@ -159,7 +191,7 @@ p {
   }
 
   .modal-content {
-  margin: 80% auto;
+    margin: 80% auto;
   }
 
   p {
